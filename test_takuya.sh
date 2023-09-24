@@ -27,8 +27,11 @@ python launch.py --config configs/magic123_proto/magic123-coarse-sd_proto.yaml -
 
 system.geometry_convert_from
 CUDA_VISIBLE_DEVICES=1 python launch.py --config configs/magic123_proto/magic123-coarse-sd_VSD.yaml --train data.image_path=load/images/luffy_medal_rgba.png system.prompt_processor.prompt="a high-resolution DSLR image of Luffy medal"
+CUDA_VISIBLE_DEVICES=1 python launch.py --config configs/magic123_proto/magic123-coarse-sd_VSD.yaml --train data.image_path=load/images/luffy_medal_rgba.png system.prompt_processor.prompt="a high-resolution DSLR image of Luffy medal"
+
 
 CUDA_VISIBLE_DEVICES=1 python launch.py --config configs/magic123_proto/magic123-refine-sd_VSD.yaml --train data.image_path=load/images/luffy_medal_rgba.png system.prompt_processor.prompt="a high-resolution DSLR image of Luffy medal" system.geometry_convert_from=outputs/magic123-coarse-sd/luffy_front_rgba.png-a_high-resolution_DSLR_image_of_Luffy_medal@20230923-015900/ckpts/last.ckpt system.renderer.context_type=cuda
 
+CUDA_VISIBLE_DEVICES=1 python launch.py --config configs/magic123_proto/magic123-refine-sd_VSD.yaml --train data.image_path=load/images/luffy_medal_rgba.png system.prompt_processor.prompt="a high-resolution DSLR image of Luffy medal" system.geometry_convert_from=outputs/magic123-coarse-sd/luffy_front_rgba.png-a_high-resolution_DSLR_image_of_Luffy_medal@20230924-100024/ckpts/last.ckpt system.renderer.context_type=cuda
 
 
