@@ -93,10 +93,8 @@ system:
 
   prompt_processor_type: "stable-diffusion-prompt-processor"
   prompt_processor:
-    prompt: "a high-resolution DSLR image of Luffy medal"
-    prompt_back: "back side of coin, without any icon, flat no illustration, simple texturess"
-    prompt_side: "side of coin, straight, flat, thin, not diagonal, completely upright"
-
+    pretrained_model_name_or_path: "runwayml/stable-diffusion-v1-5"
+    prompt: ???
 
   # guidance_type: "stable-diffusion-unified-guidance"
   # guidance:
@@ -105,10 +103,10 @@ system:
   #   guidance_scale: 100.
   #   min_step_percent: 0.2
   #   max_step_percent: 0.6
-  guidance_type: "stable-diffusion-unified-guidance"
+  guidance_type: "stable-diffusion-vsd-guidance"
   guidance:
-    pretrained_model_name_or_path: "stabilityai/stable-diffusion-2-1-base"
-    # pretrained_model_name_or_path_lora: "stabilityai/stable-diffusion-2-1-base"
+    pretrained_model_name_or_path: "runwayml/stable-diffusion-v1-5"
+    pretrained_model_name_or_path_lora: "runwayml/stable-diffusion-v1-5"
     guidance_scale: 100
     min_step_percent: 0.02
     max_step_percent: [5000, 0.98, 0.5, 5001] # annealed to 0.5 after 5000 steps
@@ -122,7 +120,7 @@ system:
   loss:
     lambda_rgb: 1000.
     lambda_mask: 100.
-    lambda_sd: 0.025
+    # lambda_sd: 0.025
     lambda_3d_sd: 1.
     lambda_vsd: 1.
     lambda_lora: 1.
